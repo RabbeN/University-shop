@@ -1,0 +1,202 @@
+<div class="items">
+    <div class="container">
+        <div class="row">
+            <!-- Main content -->
+            <div class="col-md-9 col-sm-9">
+
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="#">Главная</a></li>
+                    <li class="active">
+                    <% if (type == "phones") { %>
+                        Телефоны
+                    <% } else if (type == "tablets") { %>
+                        Планшеты
+                    <% } else if (type == "photos") { %>
+                        Фотоаппараты
+                    <% } else if (type == "players") { %>
+                        Плееры
+                    <% }; %>                
+                    </li>
+                </ul>
+
+                <!-- Title -->
+                <h4 class="pull-left">
+                    <% if (type == "phones") { %>
+                        Телефоны
+                    <% } else if (type == "tablets") { %>
+                        Планшеты
+                    <% } else if (type == "photos") { %>
+                        Фотоаппараты
+                    <% } else if (type == "players") { %>
+                        Плееры
+                    <% }; %> 
+                </h4>
+                <div class="clearfix"></div>
+
+                <div class="row" id="items"></div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 hidden-xs">
+                <h5 class="title">Фильтр</h5>
+                <br />
+                <div class="filter">
+                    <div class="form form-small">
+                        <form id="form-filter" class="form-horizontal">
+                            <!-- Price -->
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="filter">Цена от</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="price_start">
+                                </div>
+                                <label class="control-label col-md-4" for="filter">до</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="price_end">
+                                </div>
+                            </div>
+                            <% if (type == "phones") { %>
+
+                            <!-- Number of cores -->
+                            <div class="form-group">
+                                <label class="control-label col-md-7" for="filter">Количество ядер</label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" name="numberofcoresmob">
+                                </div>
+                            </div>
+                            <!-- Flashlight -->
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="m_torchlight"> Фонарик
+                                </label>
+                            </div>
+                            <!-- NFC -->
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="nfc"> NFC
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="fingerprint"> Сканер отпечатка пальца
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="dual_sim"> Поддержка несколько SIM
+                                </label>
+                            </div>
+
+                            <% } else if (type == "tablets") { %>
+
+                            <!-- Number of cores -->
+                            <div class="form-group">
+                                <label class="control-label col-md-7" for="filter">Количество ядер</label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" name="cpu_corenb">
+                                </div>
+                            </div>
+                            <!-- gyroscope -->
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="gyroscope"> Гироскоп
+                                </label>
+                            </div>
+                            <!-- 3d screen -->
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="3dscreen"> 3D-экран
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="memcardsnb"> Карты памяти
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="wifinb"> Wi-Fi
+                                </label>
+                            </div>
+
+                            <% } else if (type == "photos") { %>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-7" for="filter">Количество точек матрицы</label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" name="cam_mpx">
+                                </div>
+                            </div>
+                            <!-- sens_screen -->
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="sens_screen"> Сенсорный экран
+                                </label>
+                            </div>
+                            <!-- second_display -->
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="second_display"> Дополнительный экран
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="stabilizer"> Оптическая стабилизация
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="cam_video"> Запись видео
+                                </label>
+                            </div>
+
+                            <% } else if (type == "players") { %>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-7" for="filter">Объем</label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" name="memcard_volume">
+                                </div>
+                            </div>
+                            <!-- sens_screen -->
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="panels"> Сменные панели
+                                </label>
+                            </div>
+                            <!-- second_display -->
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="sens_screen"> Сенсорный экран
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="photo_formats"> Поддержка фото форматов
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="video_formats"> Поддержка видео форматов
+                                </label>
+                            </div>
+                            
+                            <% }; %> 
+                        </form>
+                    </div>
+
+                    <br>
+                    
+                      <!-- Confirm order button -->
+                      <div class="row">
+                        <div class="col-md-4 col-md-offset-1">
+                          <div class="center">
+                            <a href="#filter" id="btn-filter" class="btn btn-default">Выбрать подходящее!</a>
+                          </div>
+
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

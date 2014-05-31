@@ -1,0 +1,22 @@
+<% _.each(items, function(item){ %>
+<div class="col-md-4 col-sm-6">
+	<div class="item">
+		<div class="item-image">
+			<a href="#/<%= type %>/<%= item.id %>"><img src='<%= item.get("itemThumbImgUrl") %>' alt="" class="img-responsive"></a>
+		</div>
+		<div class="item-details">
+			<h5><a href="#/<%= type %>/<%= item.id %>"><%= item.get("itemTitle") %></a></h5>
+			<div class="item-price center"><%= item.get("price").min %>$ - <%= item.get("price").max %>$</div>
+			<hr />
+			<div class="button pull-left"><a href="#">В корзину</a></div>
+			<div class="button pull-right"><a href="#">Сравнить</a></div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<% }); %>
+
+<div class="clearfix"></div>
+
+<!-- Pagination -->
+<div class="paging center"></div>

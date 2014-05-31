@@ -1,0 +1,16 @@
+<% if (currentPage != 1) { %>
+	<a href="#/<%= type %>?<%= filter %>page=<%= currentPage - 1 %>">Назад</a>
+<% }; %>
+
+<% _.each(_.range(totalPages), function(page){ %>
+	<% if (currentPage == page + 1) { %>
+		<span class="current"><%= page + 1 %></span>
+	<% } else { %>
+		<a href="#/<%= type %>?<%= filter %>page=<%= page + 1 %>"><%= page + 1 %></a>
+	<% }; %>
+<% }); %>
+
+<% if (currentPage < totalPages) { %>
+	<a href="#/<%= type %>?<%= filter %>page=<%= currentPage + 1 %>">Вперед</a>
+<% }; %>
+<!-- <span class="dots">…</span> -->

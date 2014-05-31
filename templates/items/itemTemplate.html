@@ -1,0 +1,151 @@
+<div class="items">
+    <div class="container">
+        <div class="row">
+
+            <!-- Main content -->
+
+            <div class="col-md-12 col-sm-12">
+
+                <!-- Breadcrumb -->
+                <ul class="breadcrumb">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#/<%= type %>">
+                        <% if (type == "phones") { %>
+                            Телефоны
+                        <% } else if (type == "tablets") { %>
+                            Планшеты
+                        <% } else if (type == "photos") { %>
+                            Фотоаппараты
+                        <% } else if (type == "players") { %>
+                            Плееры
+                        <% }; %>                
+                    </a></li>
+                    <li class="active"><%= item.get("itemTitle") %></li>
+                </ul>
+
+                <!-- Product details -->
+
+                <div class="product-main">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+
+                            <div class="product-slider">
+                                <div class="product-image-slider">
+                                    <ul class="slides">
+                                        <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; display: block;">
+                                            <img src="<%= item.get('itemThumbImgUrl') %>" alt="">
+<!--                                             <img src="<%= item.get('techInfo').thumbs[0].fullSizeURL %>" alt="">
+ -->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <h4 class="title"><%= item.get("itemTitle") %></h4>
+                            <h5>Цена : <%= item.get("price").min %>$ - <%= item.get("price").max %>$</h5>
+                            <br />
+                            <p><%= item.get("shortDescr") %></p>
+                            <br />
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control input-sm" value="1">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default btn-sm" type="button">В корзину</button>
+                                            <button class="btn btn-default btn-sm" type="button">Сравнить</button>
+                                        </span> 
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toggle="tab">Техническое описание</a>
+                    </li>
+                    <li class=""><a href="#tab2" data-toggle="tab">Отзывы (1)</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Specs -->
+                    <div class="tab-pane active" id="tab1">
+                        <table class="table table-striped tcart">
+                            <tbody>
+                                <% _.each(_.reject(item.get('techInfo'), function(techInfo){ return techInfo == 'thumbs'; }), function(tech){ %>
+                                <tr>
+                                    <td><strong><%= tech.title %></strong></td>
+                                    <td><%= tech.value %></td>
+                                </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <!-- Review -->
+                    <div class="tab-pane" id="tab2">
+                        <div class="item-review">
+                            <h5>Dmitry Putintsev - <span class="color">4/5</span></h5>
+                            <p class="rmeta">31/05/2014</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum dolor eget nisi fermentum  quis hendrerit magna vestibulum. Curabitur pulvinar ornare vulputate scelerisque scelerisque ut consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum dolor eget nisi fermentum quis hendrerit magna vestibulum.</p>
+                        </div>
+
+                        <hr>
+                        <h5 class="title">Написать отзыв</h5>
+
+                        <div class="form form-small">
+                            <form class="form-horizontal">
+                                <!-- Name -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="name">Ваше имя</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                </div>
+                                <!-- Select box -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Рейтинг</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control">
+                                            <option>&nbsp;</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Review -->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3" for="name">Ваш отзыв</label>
+                                    <div class="col-md-6">
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <!-- Buttons -->
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <button type="submit" class="btn btn-default">Опубликовать</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

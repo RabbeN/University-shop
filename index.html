@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>University Shop</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Styles -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">   
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/red.css" rel="stylesheet">
+    
+    <script data-main="js/main" src="js/libs/require/require.js"></script>
+  </head>
+  
+  <body>
+
+    <!-- Cart Modal starts -->
+    <div id="cart" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4>Корзина</h4>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped tcart">
+              <thead>
+                <tr>
+                  <th>Название</th>
+                  <th>Количество</th>
+                  <th>Цена</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="#">HTC One</a></td>
+                  <td>2</td>
+                  <td>$250</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Apple iPhone</a></td>
+                  <td>1</td>
+                  <td>$502</td>
+                </tr>
+                <tr>
+                  <td><a href="#">Galaxy Note</a></td>
+                  <td>4</td>
+                  <td>$1303</td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>Итого</th>
+                  <th>$2405</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn btn-default">Заказать что-то еще</a>
+            <a href="#/order" data-dismiss="modal" class="btn btn-danger cart-order">Заказать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Cart modal ends -->
+
+    <!-- Header starts -->
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="logo">
+              <h1><a href="#">University<span class="color bold"> Shop</span></a></h1>
+            </div>
+          </div>
+          <div class="col-md-4 col-md-offset-4">
+            <div class="hlinks">
+              <p><a href="#">Главная</a> | <a href="#/order">Заказ и доставка</a> | <a href="#/contact">Контакты</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--/ Header ends -->
+
+    <!-- Navigation -->
+    <div class="navbar bs-docs-nav" role="banner">
+      <div class="container">
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li><a href="#/phones">Телефоны</a></li>
+            <li><a href="#/tablets">Планшеты</a></li>
+            <li><a href="#/photos">Фотоаппараты</a></li>
+            <li><a href="#/players">Плееры</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#cart" role="button" data-toggle="modal"><i class="fa fa-shopping-cart"> 3</i></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!--/ Navigation End -->
+
+    <div id="page">
+      Loading....
+    </div>
+    
+    <!-- Newsletter starts -->
+    <div class="container newsletter">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well">
+            <h5><i class="fa fa-envelope"></i> Хочу получать новости!</h5>
+            <form class="form-inline" role="form">
+              <div class="form-group">
+                <input type="email" class="form-control" id="search" placeholder="Введите email">
+              </div>
+              <button type="submit" class="btn btn-default">Подписаться</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Newsletter ends -->
+
+    <!-- Footer starts -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="widget">
+                  <h5>Контакты</h5>
+                  <hr />
+                  <div class="social">
+                    <a href="#"><i class="fa fa-facebook facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin linkedin"></i></a>
+                    <a href="#"><i class="fa fa-google-plus google-plus"></i></a> 
+                  </div>
+                  <hr />
+                  <i class="fa fa-home"></i> &nbsp; 220030, г.Минск, пр.Независимости 4.
+                  <hr />
+                  <i class="fa fa-phone"></i> &nbsp; +375-29-666-66-66
+                  <hr />
+                  <i class="fa fa-envelope-o"></i> &nbsp; <a href="mailto:#">shop@bsu.by</a>
+                  <hr />
+                  <div class="payment-icons">
+                    <img src="img/payment/visa.gif" alt="" />
+                    <img src="img/payment/mastercard.gif" alt="" />
+                    <img src="img/payment/paypal.gif" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="widget">
+                  <h5>О нас</h5>
+                  <hr />
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum dolor eget nisi fermentum  quis hendrerit magna vestibulum. Curabitur pulvinar ornare vulputate scelerisque scelerisque ut consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum dolor eget nisi fermentum quis hendrerit magna vestibulum.</p> 
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="widget">
+                  <h5>Каталог</h5>
+                  <hr />
+                  <div class="two-col">
+                    <div class="col-left">
+                      <ul>
+                        <li><a href="#/phones">Телефоны</a></li>
+                        <li><a href="#/tablets">Планшеты</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-right">
+                      <ul>
+                        <li><a href="#/photos">Фотоаппараты</a></li>
+                        <li><a href="#/players">Плееры</a></li>
+                      </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <p class="copy center">Copyright &copy; 2014</p>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </footer>   
+    <!--/ Footer ends -->
+
+    <!-- Scroll to top -->
+    <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+  </body> 
+</html>
